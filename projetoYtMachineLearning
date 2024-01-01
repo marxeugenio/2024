@@ -1,0 +1,27 @@
+from sklearn.svm import LinearSVC
+
+# pelo longo?
+# perna curta?
+# faz auau?
+
+porco1 = [0, 1, 0]
+porco2 = [0, 1, 1]
+porco3 = [1, 1, 0]
+
+cachorro1 = [0, 1, 1]
+cachorro2 = [1, 0, 1]
+cachorro3 = [1, 1, 1]
+
+# nada a ver com os de cima
+
+treino_x = [porco1, porco2, porco3, cachorro1, cachorro2, cachorro3]
+treino_y = [1,1,1,0,0,0] # 0 cachorro 1 porco
+
+modelo = LinearSVC()
+modelo.fit(treino_x, treino_y)
+
+animal_misteriosso = [1,1,1]
+
+previsão = modelo.predict([animal_misteriosso])
+
+print(previsão)
